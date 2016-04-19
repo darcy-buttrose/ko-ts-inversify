@@ -10,4 +10,5 @@ export interface IHomePageViewModel {
     names: KnockoutObservable<Array<string>>;
 
     publishName(): void;
+    init(params: {title: string, initName: string}) : void;
 }

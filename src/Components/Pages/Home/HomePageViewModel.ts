@@ -10,6 +10,7 @@ import {Map} from "immutable";
 import state$ from "../../../Models/Model";
 import {inject, injectable} from "inversify";
 import {INameService} from "../../../Services/INameService";
+import {IAppWindow} from "../../../Services/IAppWindow";
 import {IHomePageViewModel} from "./IHomePageViewModel"
 
 @injectable()
@@ -19,11 +20,14 @@ export class HomePageViewModel implements IHomePageViewModel {
     display : KnockoutObservable<string>;
     names: KnockoutObservable<Array<string>>;
     nameService: INameService;
+    appWindow: IAppWindow;
 
     constructor (
-        @inject("INameService") nameService: INameService
+        @inject("INameService") nameService: INameService,
+        @inject("IAppWindow") appWindow: IAppWindow
     ) {
         this.nameService = nameService;
+        this.appWindow = appWindow;
     }
 
     public init(params: {title: string, initName: string}) {

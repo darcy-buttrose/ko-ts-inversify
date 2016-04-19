@@ -77,9 +77,10 @@ gulp.task('package-rjs', ['compile-amd','movestatic'], () => {
                 "text": "./node_modules/text/text",
                 "jquery": "./node_modules/jquery/dist/jquery",
                 "inversify": "./node_modules/inversify/dist/inversify",
-                "@reactivex/rxjs": "./node_modules/@reactivex/rxjs/dist/amd/rx.KitchenSink"
+                "rxjs": "./node_modules/rxjs/bundles/Rx.umd"
             },
             include: [
+                './node_modules/requirejs/require',
                 './build/amd/main.js'
             ],
             out: 'bundle.js'

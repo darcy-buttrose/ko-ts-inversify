@@ -1,6 +1,6 @@
 /// <reference path="../../../typings.d.ts" />
 import * as ko from "knockout";
-import {kernel} from "../../../inversify.config";
+import kernel from "../../../inversify.config";
 import componentTemplate from "text!./home-page.tmpl.html";
 import {IHomePageViewModel} from "./IHomePageViewModel"
 import {HomePageViewModel} from "./HomePageViewModel"
